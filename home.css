@@ -1,0 +1,266 @@
+/* Cinematic Background Slider Styles */
+.video-graphic-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.bg-scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: scene-cycle 18s infinite;
+}
+
+.scene-1 {
+    animation-delay: 0s;
+}
+
+.scene-2 {
+    animation-delay: 6s;
+}
+
+.scene-3 {
+    animation-delay: 12s;
+}
+
+/* Background Overlay for text readability */
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: -1;
+}
+
+/* Ken Burns + Crossfade Animation */
+@keyframes scene-cycle {
+    0% {
+        opacity: 0;
+        transform: scale(1) translate(0, 0);
+    }
+
+    5% {
+        opacity: 0.6;
+        /* Cinematic dimness */
+    }
+
+    33% {
+        opacity: 0.6;
+    }
+
+    38% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.15) translate(2%, 2%);
+        /* Ken Burns Effect */
+    }
+}
+
+/* Home Page Minimalist overrides */
+body.home-page {
+    background-color: #000 !important;
+    overflow-x: hidden;
+    color: #fff;
+}
+
+body.home-page.events-page {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('events-bg.jpg') no-repeat center center / cover fixed !important;
+}
+
+body.home-page main {
+    background-color: transparent !important;
+}
+
+/* Ensure Navbar is visible over the video graphic */
+.home-page #header {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(197, 160, 118, 0.3);
+}
+
+.hero {
+    background: transparent !important;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content h2 {
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content p {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* ── Our Story / About Section on Home Page ── */
+.section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.section-alt {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #d4af37;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.split-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    line-height: 1.3;
+    margin-bottom: 25px;
+    color: #f5f5dc;
+}
+
+.split-text>p {
+    font-size: 0.9rem;
+    line-height: 1.9;
+    opacity: 0.8;
+    margin-bottom: 18px;
+    color: #e0e0e0;
+}
+
+.highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.highlights>div {
+    padding: 22px;
+    border-left: 2px solid #d4af37;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 0 6px 6px 0;
+    transition: background 0.3s ease;
+}
+
+.highlights>div:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.highlights h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    color: #f5f5dc;
+}
+
+.highlights p {
+    font-size: 0.8rem;
+    line-height: 1.7;
+    opacity: 0.7;
+}
+
+.split-media {
+    position: relative;
+    height: 500px;
+}
+
+.image-card {
+    position: absolute;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.image-card-large {
+    width: 70%;
+    height: 420px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.image-card-small {
+    width: 55%;
+    height: 280px;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    transform: rotate(2deg);
+}
+
+.image-card-large:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+.image-card-small:hover {
+    transform: rotate(0deg) translateY(-8px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+    .split {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .split-text h2 {
+        font-size: 1.6rem;
+    }
+
+    .highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .split-media {
+        height: 350px;
+    }
+
+    .image-card-large {
+        width: 75%;
+        height: 300px;
+    }
+
+    .image-card-small {
+        width: 55%;
+        height: 200px;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations - Jiang Nan | Chinese Fusion Cuisine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body class="home-page">
+    <header id="header">
+        <nav class="container">
+            <div class="logo">
+                <h1>JIANG NAN</h1>
+                <span>CHINESE FUSION</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="events.html">EVENTS & CATERING</a></li>
+                <li><a href="locations.html">LOCATIONS</a></li>
+                <li><a href="reservations.html">RESERVATIONS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Premium Hero Section -->
+        <section class="page-hero reservations-hero"
+            style="background-image: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1500&auto=format&fit=crop');">
+            <div class="hero-content reveal">
+                <h1>RESERVATIONS</h1>
+                <p>Join Us for an Unforgettable Culinary Experience</p>
+            </div>
+        </section>
+
+        <!-- RESERVATIONS -->
+        <section id="reservations" class="section py-80">
+            <div class="container split-layout reveal">
+                <div class="split-text">
+                    <p class="info-label">RESERVATIONS</p>
+                    <h2 class="section-title">Reserve your evening at Jiang Nan.</h2>
+                    <p class="description-text">
+                        We welcome parties of all sizes, with limited bar seating
+                        available for walk-ins. For groups of 7 or more, please contact
+                        us directly so we can help curate your experience.
+                    </p>
+                    <ul class="details-list">
+                        <li>Online reservations available for parties up to 6 guests.</li>
+                        <li>For private dining or buyouts, inquire via email.</li>
+                        <li>Kindly arrive on time; we hold tables for 15 minutes.</li>
+                    </ul>
+                </div>
+                <div class="split-media">
+                    <form class="premium-form reservation-form" action="#" method="post">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>NAME</label>
+                                <input type="text" name="name" required placeholder="Your Name" />
+                            </div>
+                            <div class="form-group">
+                                <label>EMAIL</label>
+                                <input type="email" name="email" required placeholder="Your Email" />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>DATE</label>
+                                <input type="date" name="date" required />
+                            </div>
+                            <div class="form-group">
+                                <label>TIME</label>
+                                <input type="time" name="time" required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>GUESTS</label>
+                            <select name="guests" required class="premium-select">
+                                <option value="">Select party size</option>
+                                <option>1 Guest</option>
+                                <option>2 Guests</option>
+                                <option>3 Guests</option>
+                                <option>4 Guests</option>
+                                <option>5 Guests</option>
+                                <option>6 Guests</option>
+                                <option>7+ (Please contact us)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>SPECIAL REQUESTS</label>
+                            <textarea name="notes" rows="3"
+                                placeholder="Dietary needs, celebrations, or preferences"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-btn">SUBMIT REQUEST &gt;</button>
+
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container grid-3">
+            <div>
+                <h3>JIANG NAN</h3>
+                <p>Authentic Chinese Fusion experience.</p>
+            </div>
+            <div>
+                <h4>LINKS</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="locations.html">Locations</a></li>
+                    <li><a href="reservations.html">Reservations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>CONTACT</h4>
+                <p><a href="mailto:info@jiangnanus.com">info@jiangnanus.com</a></p>
+                <p><a href="tel:9296236262">929-623-6262</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Jiang Nan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

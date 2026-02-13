@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Catering - Jiang Nan | Chinese Fusion Cuisine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
+    <style>
+        /* Events Page Specific Styles */
+        .events-hero-section {
+            height: 70vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)), url('events-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .events-hero-section .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .events-hero-section h1 {
+            font-size: 3.5rem;
+            letter-spacing: 8px;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .events-hero-section p {
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .events-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 20px 40px;
+        }
+
+        .events-intro h2 {
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+
+        .events-intro p {
+            font-size: 0.95rem;
+            line-height: 2;
+            opacity: 0.85;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 40px 0 80px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, var(--accent-gold), transparent);
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: stretch;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 40px;
+            transform: translateX(-50%);
+            width: 14px;
+            height: 14px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            border: 3px solid #1a1a1a;
+            z-index: 2;
+        }
+
+        .timeline-content {
+            width: 44%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.4s ease, border-color 0.4s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+
+        .timeline-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .timeline-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to top, rgba(26, 26, 26, 1), transparent);
+        }
+
+        .timeline-text {
+            padding: 30px;
+        }
+
+        .timeline-year {
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .timeline-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .timeline-text p {
+            font-size: 0.85rem;
+            line-height: 1.8;
+            opacity: 0.8;
+        }
+
+        /* Catering Services */
+        .catering-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .catering-section h2 {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            letter-spacing: 5px;
+            margin-bottom: 15px;
+        }
+
+        .catering-section .subtitle {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-bottom: 50px;
+        }
+
+        .catering-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .catering-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.12);
+            border-radius: 8px;
+            padding: 40px 30px;
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+
+        .catering-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(212, 175, 55, 0.35);
+            transform: translateY(-5px);
+        }
+
+        .catering-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .catering-card h3 {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+
+        .catering-card p {
+            font-size: 0.82rem;
+            line-height: 1.8;
+            opacity: 0.75;
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('events-bg.jpg');
+            background-size: cover;
+            background-position: center bottom;
+            background-attachment: fixed;
+            padding: 80px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .cta-banner h2 {
+            font-size: 1.8rem;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        .cta-banner p {
+            max-width: 500px;
+            margin: 0 auto 30px;
+            opacity: 0.85;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .timeline-item::before {
+                left: 20px;
+            }
+
+            .timeline-content {
+                width: 100%;
+                margin-left: 50px;
+            }
+
+            .catering-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .events-hero-section h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="home-page"
+    style="background: #1a1a1a url('https://www.transparenttextures.com/patterns/dark-matter.png') repeat fixed !important;">
+    <header id="header">
+        <nav class="container">
+            <div class="logo">
+                <h1>JIANG NAN</h1>
+                <span>CHINESE FUSION</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="events.html" class="active">EVENTS & CATERING</a></li>
+                <li><a href="locations.html">LOCATIONS</a></li>
+                <li><a href="reservations.html">RESERVATIONS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="events-hero-section">
+            <div class="hero-content reveal">
+                <h1>EVENTS & CATERING</h1>
+                <p>From intimate gatherings to grand celebrations — let Jiang Nan bring the art of Chinese Fusion to
+                    your most memorable occasions.</p>
+            </div>
+        </section>
+
+        <!-- Introduction -->
+        <div class="events-intro reveal">
+            <h2>CELEBRATE WITH US</h2>
+            <p>Celebrating a special occasion? Let Jiang Nan host your next private event! From a small intimate
+                group to a lavish banquet, we can accommodate a luncheon or dinner event for up to 300 guests.
+                Our catering team can arrange a beautiful atmosphere and theme; our chef will
+                customize the perfect menu with your budget in mind. Whatever the reason for your event, our
+                team will make it an occasion to remember.</p>
+        </div>
+
+        <!-- Events Timeline -->
+        <section class="timeline container">
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <div class="timeline-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800&auto=format&fit=crop');">
+                    </div>
+                    <div class="timeline-text">
+                        <span class="timeline-year">2023 — NYC MAYOR'S RESIDENCE</span>
+                        <h3>EXCLUSIVE GALA DINNER</h3>
+                        <p>Jiang Nan, as the exclusive designated Chinese cuisine brand, was invited by the Mayor of New
+                            York City to host and entertain 500 guests at his residence. The event successfully promoted
+                            traditional Chinese culinary culture, receiving high praise from attendees.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <div class="timeline-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1551818255-e6e10975bc17?q=80&w=800&auto=format&fit=crop');">
+                    </div>
+                    <div class="timeline-text">
+                        <span class="timeline-year">2023 — BARCLAYS CENTER</span>
+                        <h3>BROOKLYN NETS PARTNERSHIP</h3>
+                        <p>We are proud to be selected as one of the on-site catering vendors at Brooklyn's Barclays
+                            Center
+                            for the Nets. With our team of highly skilled chefs, we guarantee an exceptional dining
+                            experience for guests attending events at the venue.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <div class="timeline-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=800&auto=format&fit=crop');">
+                    </div>
+                    <div class="timeline-text">
+                        <span class="timeline-year">2024 — CORPORATE EVENTS</span>
+                        <h3>PRIVATE CELEBRATIONS</h3>
+                        <p>Our private dining rooms and event spaces are perfect for corporate celebrations, milestone
+                            birthdays, anniversaries, and holiday parties. We work closely with hosts to craft a
+                            personalized experience that exceeds expectations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catering Services -->
+        <section class="catering-section container">
+            <h2>OUR SERVICES</h2>
+            <p class="subtitle">Tailored culinary experiences for every occasion</p>
+            <div class="catering-grid">
+                <div class="catering-card reveal">
+                    <span class="catering-icon">🍽️</span>
+                    <h3>PRIVATE DINING</h3>
+                    <p>Exclusive dining rooms for intimate gatherings of 10 to 50 guests, complete with customized menus
+                        and dedicated service staff.</p>
+                </div>
+                <div class="catering-card reveal">
+                    <span class="catering-icon">🎉</span>
+                    <h3>GRAND BANQUETS</h3>
+                    <p>Full-scale event catering and venue arrangement for up to 300 guests. From décor to dessert,
+                        every detail is curated to perfection.</p>
+                </div>
+                <div class="catering-card reveal">
+                    <span class="catering-icon">🏢</span>
+                    <h3>CORPORATE EVENTS</h3>
+                    <p>Impress your clients and teams with elevated Chinese Fusion cuisine, seamlessly delivered to your
+                        office or chosen venue.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="cta-banner reveal">
+            <h2>PLAN YOUR EVENT</h2>
+            <p>Ready to create something unforgettable? Reach out to our events team today.</p>
+            <a href="contact.html" class="btn btn-primary"
+                style="background: var(--accent-gold); color: #1a1a1a; border: none; padding: 15px 45px; letter-spacing: 3px; font-weight: 700;">CONTACT
+                US &gt;</a>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container grid-3">
+            <div>
+                <h3>JIANG NAN</h3>
+                <p>Authentic Chinese Fusion experience.</p>
+            </div>
+            <div>
+                <h4>LINKS</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="locations.html">Locations</a></li>
+                    <li><a href="events.html">Events & Catering</a></li>
+                    <li><a href="reservations.html">Reservations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>CONTACT</h4>
+                <p><a href="mailto:info@jiangnanus.com">info@jiangnanus.com</a></p>
+                <p><a href="tel:9296236262">929-623-6262</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Jiang Nan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
