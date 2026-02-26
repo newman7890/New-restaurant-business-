@@ -8,6 +8,10 @@
     --glass-bg: rgba(26, 26, 26, 0.8);
     --glass-border: rgba(212, 175, 55, 0.3);
     --body-texture: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+    --ease-luxury: cubic-bezier(0.19, 1, 0.22, 1);
+    --transition-slow: 1.2s var(--ease-luxury);
+    --transition-medium: 0.8s var(--ease-luxury);
+    --transition-fast: 0.4s var(--ease-luxury);
 }
 
 * {
@@ -46,15 +50,14 @@ html {
 }
 
 main {
-    animation: pageEntrance 0.8s ease-out both;
+    animation: pageEntrance var(--transition-medium) both;
 }
 
 /* ── Scroll Reveal System ── */
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(30px);
+    transition: opacity var(--transition-slow), transform var(--transition-slow);
 }
 
 .reveal.active {
@@ -126,19 +129,21 @@ main {
     transition-delay: 0.4s;
 }
 
+
 /* ── Smooth Micro-Transitions on Interactive Elements ── */
 a,
 button,
 .btn,
 .location-card,
 .catering-card,
-.image-card {
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+.image-card,
+.cat-link {
+    transition: all var(--transition-fast);
 }
 
 /* ── Floating Hover for Cards ── */
 .float-hover {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium);
 }
 
 .float-hover:hover {
@@ -993,4 +998,173 @@ footer a {
     .nav-links li {
         margin-left: 10px;
     }
+}
+
+/* Footer Optimization for Mobile */
+@media (max-width: 768px) {
+    .grid-3 {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    footer {
+        padding-bottom: 90px;
+    }
+
+    footer h3,
+    footer h4 {
+        margin-bottom: 15px;
+    }
+
+    footer ul li {
+        margin-bottom: 15px;
+    }
+
+    footer a {
+        font-size: 1.1rem;
+        padding: 8px 0;
+        display: block;
+    }
+}
+
+/* Fix for Reservation Form Overflow */
+#reservations .split-media {
+    height: auto;
+}
+
+/* Comprehensive Mobile Updates */
+@media (max-width: 768px) {
+
+    /* Grids */
+    .menu-locations-grid,
+    .cater-event-block,
+    .highlights,
+    .form-row {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+
+    .cater-reverse {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    /* Spacing */
+    .py-80,
+    .section {
+        padding: 40px 0;
+    }
+
+    /* Typography */
+    h1 {
+        font-size: 2.2rem !important;
+    }
+
+    h2 {
+        font-size: 1.8rem !important;
+    }
+
+    .hero-title-main {
+        font-size: 2.5rem !important;
+    }
+
+    /* Forms */
+    input,
+    select,
+    textarea {
+        font-size: 16px !important;
+        /* Prevent iOS zoom */
+        padding: 12px 0;
+    }
+
+    /* Event/Catering specific */
+    .cater-info-box {
+        padding: 30px;
+    }
+
+    .cater-slider-box {
+        min-height: 250px;
+    }
+
+    .year-label {
+        font-size: 2.5rem;
+    }
+
+    /* Ensure specific sections dont overflow */
+    .split-media,
+    .image-card-large,
+    .image-card-small {
+        width: 100%;
+        position: relative;
+        height: auto;
+        min-height: 250px;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        transform: none !important;
+        margin-bottom: 20px;
+    }
+
+    .image-card-small {
+        display: none;
+        /* Hide decorative small image on mobile to save space */
+    }
+
+    /* Performance: Disable fixed background on mobile */
+    body {
+        background-attachment: scroll !important;
+    }
+
+    /* SIZE REDUCTION - Compact Mobile View */
+    .logo h1 {
+        font-size: 1.2rem !important;
+    }
+
+    .logo span {
+        font-size: 0.6rem !important;
+    }
+
+    header nav {
+        padding: 10px 0 !important;
+    }
+
+    .page-hero {
+        height: 30vh !important;
+        min-height: 200px;
+    }
+
+    .page-hero h1 {
+        font-size: 1.8rem !important;
+    }
+
+    .section,
+    .py-80 {
+        padding: 30px 0 !important;
+    }
+
+    h1 {
+        font-size: 1.8rem !important;
+    }
+
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    p,
+    li,
+    a {
+        font-size: 0.9rem !important;
+    }
+
+    .btn {
+        padding: 6px 16px !important;
+        font-size: 0.75rem !important;
+    }
+}
+
+
+.mt-30 {
+    margin-top: 30px;
 }

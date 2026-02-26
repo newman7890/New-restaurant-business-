@@ -1,0 +1,262 @@
+/* Events Page Specific Styles */
+.events-hero-section {
+    height: 70vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)), url('events-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.events-hero-section .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.events-hero-section h1 {
+    font-size: 3.5rem;
+    letter-spacing: 8px;
+    margin-bottom: 15px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.events-hero-section p {
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+.events-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 20px 40px;
+}
+
+.events-intro h2 {
+    font-size: 1.8rem;
+    color: var(--accent-gold);
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+.events-intro p {
+    font-size: 0.95rem;
+    line-height: 2;
+    opacity: 0.85;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding: 40px 0 80px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, var(--accent-gold), transparent);
+}
+
+.timeline-item {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    background: var(--accent-gold);
+    border-radius: 50%;
+    border: 3px solid #1a1a1a;
+    z-index: 2;
+}
+
+.timeline-content {
+    width: 44%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.4);
+}
+
+.timeline-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.timeline-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to top, rgba(26, 26, 26, 1), transparent);
+}
+
+.timeline-text {
+    padding: 30px;
+}
+
+.timeline-year {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    color: var(--accent-gold);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.timeline-text h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.timeline-text p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+/* Catering Services */
+.catering-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.catering-section h2 {
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.catering-section .subtitle {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin-bottom: 50px;
+}
+
+.catering-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.catering-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.12);
+    border-radius: 8px;
+    padding: 40px 30px;
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+.catering-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(212, 175, 55, 0.35);
+    transform: translateY(-5px);
+}
+
+.catering-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.catering-card h3 {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    color: var(--accent-gold);
+    margin-bottom: 15px;
+}
+
+.catering-card p {
+    font-size: 0.82rem;
+    line-height: 1.8;
+    opacity: 0.75;
+}
+
+/* CTA Banner */
+.cta-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('events-bg.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    background-attachment: fixed;
+    padding: 80px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.cta-banner h2 {
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.cta-banner p {
+    max-width: 500px;
+    margin: 0 auto 30px;
+    opacity: 0.85;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .timeline-item::before {
+        left: 20px;
+    }
+
+    .timeline-content {
+        width: 100%;
+        margin-left: 50px;
+    }
+
+    .catering-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .events-hero-section h1 {
+        font-size: 2rem;
+    }
+}

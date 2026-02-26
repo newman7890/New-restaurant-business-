@@ -23,10 +23,14 @@
                 <h1>JIANG NAN</h1>
                 <span>CHINESE FUSION</span>
             </div>
+            <div id="menuToggle">
+                &#9776; <!-- Hamburger Icon -->
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html#home">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="menu.html">MENU</a></li>
+                <li><a href="order.html" class="order-link-btn">ORDER ONLINE</a></li>
                 <li><a href="events.html">EVENTS & CATERING</a></li>
                 <li><a href="locations.html">LOCATIONS</a></li>
                 <li><a href="reservations.html">RESERVATIONS</a></li>
@@ -46,11 +50,92 @@
     <main>
         <section class="hero" id="home">
             <div class="hero-content container">
-
+                <div class="welcome-box reveal">
+                    <span class="welcome-top">Welcome to</span>
+                    <h1 class="welcome-title">JIANG NAN</h1>
+                    <p class="welcome-sub">CHINESE FUSION</p>
+                </div>
             </div>
         </section>
 
-        <!-- About / Our Story Section -->
+        <!-- Featured Specialties -->
+        <section id="specialties" class="section reveal">
+            <div class="container text-center mb-60">
+                <p class="eyebrow">Signature Flavors</p>
+                <h2 class="serif section-title-large">Chef's Specialties</h2>
+            </div>
+            <div class="container specialty-grid">
+                <div class="specialty-card reveal-up">
+                    <div class="specialty-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=600&auto=format&fit=crop');">
+                    </div>
+                    <div class="specialty-info">
+                        <h3>Drunken Chicken</h3>
+                        <p>Traditional Shaoxing wine-marinated chicken, served cold with a delicate herbal aroma.</p>
+                        <a href="menu.html" class="btn-text">EXPLORE <span class="arrow">→</span></a>
+                    </div>
+                </div>
+                <div class="specialty-card reveal-up" style="transition-delay: 0.2s;">
+                    <div class="specialty-image" style="background-image: url('assets/tilapia.jpg');">
+                    </div>
+                    <div class="specialty-info">
+                        <h3>Tilapia au Four</h3>
+                        <p>French-inspired oven-roasted tilapia with savory herbs and a delicate lemon-butter finish.
+                        </p>
+                        <a href="menu.html" class="btn-text">EXPLORE <span class="arrow">→</span></a>
+                    </div>
+                </div>
+                <div class="specialty-card reveal-up" style="transition-delay: 0.4s;">
+                    <div class="specialty-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?q=80&w=600&auto=format&fit=crop');">
+                    </div>
+                    <div class="specialty-info">
+                        <h3>Golden Crispy Duck</h3>
+                        <p>Perfectly roasted duck with a delicate honey-lacquered skin and succulent meat.</p>
+                        <a href="menu.html" class="btn-text">EXPLORE <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Experience Gallery -->
+        <section class="section section-dark overflow-hidden">
+            <div class="container-full experience-gallery">
+                <div class="gallery-track">
+                    <div class="gallery-item-wide reveal-left"
+                        style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop');">
+                        <div class="gallery-caption">
+                            <h3>Atmospheric Dining</h3>
+                            <p>An intimate setting designed for meaningful connections.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-column">
+                        <div class="gallery-item reveal-up"
+                            style="background-image: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=600&auto=format&fit=crop');">
+                        </div>
+                        <div class="gallery-item reveal-up"
+                            style="background-image: url('https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=600&auto=format&fit=crop');">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guest Impressions (Testimonials) -->
+        <section class="section reveal">
+            <div class="container text-center">
+                <div class="testimonial-box">
+                    <span class="quote-mark">“</span>
+                    <p class="testimonial-text serif">
+                        The balance of flavors at Jiang Nan is truly exceptional. It's not just a meal; it's a sensory
+                        journey that honors Chinese heritage while embracing modern creativity.
+                    </p>
+                    <p class="testimonial-author">— Global Culinary Review</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chef's Philosophy -->
         <section id="about" class="section section-alt">
             <div class="container split reveal">
                 <div class="split-text">
@@ -83,6 +168,9 @@
                             </p>
                         </div>
                     </div>
+                    <div class="mt-40">
+                        <a href="about.html" class="btn btn-primary">LEARN OUR PHILOSOPHY</a>
+                    </div>
                 </div>
                 <div class="split-media">
                     <div class="image-card image-card-large"
@@ -108,6 +196,7 @@
                 <ul>
                     <li><a href="about.html">About</a></li>
                     <li><a href="menu.html">Menu</a></li>
+                    <li><a href="order.html">Order Online</a></li>
                     <li><a href="locations.html">Locations</a></li>
                     <li><a href="reservations.html">Reservations</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -123,6 +212,28 @@
             <p>&copy; 2026 Jiang Nan. All Rights Reserved.</p>
         </div>
     </footer>
+
+
+
+
+
+    <div class="mobile-bottom-nav">
+        <a href="locations.html" class="bottom-nav-item">
+            <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>LOCATIONS</span>
+        </a>
+        <a href="menu.html" class="bottom-nav-item">
+            <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 6h18M3 12h18M3 18h18"></path>
+            </svg>
+            <span>MENU</span>
+        </a>
+    </div>
 
     <script src="main.js"></script>
 </body>
