@@ -21,34 +21,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // ── Smooth Header Shrink on Scroll ──
+    // ── Smooth Header Shrink on Scroll (DISABLED) ──
+    // The user requested that the header stay exactly where it is (static at top) 
+    // rather than following or animating on scroll.
     const header = document.getElementById('header');
-    let lastScrollY = 0;
-    let ticking = false;
-
-    const updateHeader = () => {
-        if (window.scrollY > 50) {
-            header.style.padding = '0.6rem 0';
-            header.style.backgroundColor = 'rgba(10, 10, 10, 0.97)';
-            header.style.backdropFilter = 'blur(12px)';
-            header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
-        } else {
-            header.style.padding = '1.2rem 0';
-            header.style.backgroundColor = 'rgba(20, 20, 20, 0.85)';
-            header.style.backdropFilter = 'blur(8px)';
-            header.style.boxShadow = 'none';
-        }
-        ticking = false;
-    };
-
-    window.addEventListener('scroll', () => {
-        lastScrollY = window.scrollY;
-        if (!ticking) {
-            window.requestAnimationFrame(updateHeader);
-            ticking = true;
-        }
-    });
-    updateHeader();
+    if (header) {
+        header.style.padding = '1.2rem 0';
+        header.style.backgroundColor = 'transparent';
+        header.style.backdropFilter = 'none';
+        header.style.boxShadow = 'none';
+    }
 
     // ── Smooth Page Transitions ──
     // Fade out before navigating to internal pages
