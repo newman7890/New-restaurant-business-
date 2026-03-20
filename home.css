@@ -642,20 +642,22 @@ body.home-page main {
     }
 
     .video-graphic-bg {
-        height: 120vh !important;
-        height: 120svh !important;
-        top: -10vh !important;
+        height: 100vh !important;
+        height: 100svh !important;
+        top: 0 !important;
         transform: translateZ(0);
         -webkit-transform: translateZ(0);
-        will-change: transform;
+        will-change: transform, opacity;
     }
 
     .bg-scene {
         display: block !important;
-        opacity: 0.4;
+        opacity: 0;
         animation-name: scene-cycle-mobile !important;
         animation-duration: 18s !important;
         animation-iteration-count: infinite !important;
+        animation-timing-function: ease-in-out !important;
+        animation-fill-mode: both !important;
         will-change: transform, opacity;
     }
 
