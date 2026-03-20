@@ -587,11 +587,78 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
+    .order-hero h1 {
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+    }
+
+    .order-hero p {
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+    }
+
+    .order-section .section-title {
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+    }
+
     .item-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .item-card {
+        border-radius: 12px;
+        display: block;
+    }
+
+    .item-card::before {
+        border-radius: 12px;
+    }
+
+    .item-image {
+        height: 140px;
+        width: 100%;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .item-info {
+        padding: 16px;
+    }
+
+    .item-info h4 {
+        font-size: 1.05rem;
+        margin-bottom: 6px;
+    }
+
+    .item-info p {
+        font-size: 0.82rem;
+        margin-bottom: 12px;
+        height: auto;
+        -webkit-line-clamp: unset;
+        line-clamp: unset;
+    }
+
+    .item-info .price {
+        font-size: 1rem;
+    }
+
+    .btn-add-cart {
+        width: 34px;
+        height: 34px;
+        font-size: 1.1rem;
+    }
+
+    .cart-trigger {
+        width: 54px;
+        height: 54px;
+        bottom: 20px;
+        right: 20px;
     }
 }
+
 
 /* ── Checkout Modal Styles ── */
 .modal-overlay {

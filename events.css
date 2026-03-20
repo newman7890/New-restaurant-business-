@@ -234,6 +234,39 @@
 }
 
 @media (max-width: 768px) {
+    .events-hero-section {
+        background-attachment: scroll !important;
+    }
+
+    .events-hero-section h1 {
+        font-size: 1.6rem;
+        letter-spacing: 4px;
+        margin-bottom: 10px;
+    }
+
+    .events-hero-section p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .events-intro {
+        padding: 40px 20px 20px;
+    }
+
+    .events-intro h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .events-intro p {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
+    .timeline {
+        padding: 20px 0 40px;
+    }
+
     .timeline::before {
         left: 20px;
     }
@@ -241,22 +274,93 @@
     .timeline-item,
     .timeline-item:nth-child(even) {
         flex-direction: column;
+        margin-bottom: 30px;
     }
 
     .timeline-item::before {
         left: 20px;
+        top: 0;
     }
 
     .timeline-content {
-        width: 100%;
         margin-left: 50px;
+        width: calc(100% - 60px);
+    }
+
+    .timeline-image {
+        height: 140px;
+    }
+
+    .timeline-text {
+        padding: 15px;
+    }
+
+    .timeline-year {
+        font-size: 0.65rem;
+        margin-bottom: 6px;
+    }
+
+    .timeline-text h3 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+
+    .timeline-text p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .catering-section {
+        padding: 40px 0;
+    }
+
+    .catering-section h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .catering-section .subtitle {
+        font-size: 0.8rem;
+        margin-bottom: 25px;
     }
 
     .catering-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 20px;
     }
 
-    .events-hero-section h1 {
+    .catering-card {
+        padding: 20px 15px;
+    }
+
+    .catering-icon {
         font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .catering-card h3 {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+
+    .catering-card p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .cta-banner {
+        padding: 40px 20px;
+        background-attachment: scroll !important;
+    }
+
+    .cta-banner h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .cta-banner p {
+        font-size: 0.8rem;
+        margin-bottom: 15px;
     }
 }

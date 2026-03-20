@@ -112,10 +112,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── Mobile Menu Toggle ──
     const menuToggle = document.getElementById('menuToggle');
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            const nav = document.querySelector('.nav-links');
-            if (nav) nav.classList.toggle('open');
+    const navLinksList = document.querySelector('.nav-links');
+
+    if (menuToggle && navLinksList) {
+        // Toggle menu on click
+        menuToggle.addEventListener('click', (e) => {
+            navLinksList.classList.toggle('open');
+            // Update icon: ✕ (close) or ☰ (hamburger)
+            menuToggle.innerHTML = navLinksList.classList.contains('open') ? '&#10005;' : '&#9776;';
+        });
+
+        // Close menu when a link is clicked
+        const navLinks = navLinksList.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinksList.classList.remove('open');
+                menuToggle.innerHTML = '&#9776;'; // Reset to hamburger icon
+            });
+        });
+
+        // Accessibility: Handle Enter/Space keys
+        menuToggle.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                menuToggle.click();
+            }
         });
     }
 

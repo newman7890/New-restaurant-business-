@@ -182,7 +182,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: 15px 0;
 }
 
 .logo h1 {
@@ -353,7 +353,7 @@ footer a {
 }
 
 .locations-hero {
-    background-image: url('file:///C:/Users/samar/.gemini/antigravity/brain/ef1e9410-af07-416e-b2b2-b5078048f16a/media__1770990129282.jpg');
+    background-image: url('locations-bg.jpg');
 }
 
 /* Staggered Sections (About Page) */
@@ -579,22 +579,6 @@ footer a {
     letter-spacing: 2px;
 }
 
-/* Book Badge */
-.book-badge {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: var(--accent-gold);
-    color: var(--primary-bg);
-    padding: 5px 10px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-align: center;
-    line-height: 1.2;
-    border-radius: 2px;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
 
 /* Sticky Filter Bar */
 .sticky-filter-bar {
@@ -1035,16 +1019,378 @@ footer a {
     height: auto;
 }
 
-/* Comprehensive Mobile Updates */
+/* Mobile Redesign - Clean & Modern */
 @media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+        width: 100vw;
+    }
 
-    /* Grids */
+    .container {
+        padding: 0 20px;
+        width: 100% !important;
+    }
+
+    /* === HEADER: Clean White Bar === */
+    header#header,
+    .home-page #header {
+        background: #ffffff !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.15) !important;
+    }
+
+    header nav {
+        padding: 14px 20px !important;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo h1 {
+        font-size: 1.25rem !important;
+        color: #1a1a1a !important;
+        letter-spacing: 2px !important;
+    }
+
+    .logo span {
+        font-size: 0.5rem !important;
+        color: #666 !important;
+        letter-spacing: 3px !important;
+    }
+
+    #menuToggle {
+        display: block !important;
+        z-index: 10000;
+        position: relative;
+        cursor: pointer;
+        padding: 6px 10px;
+        font-size: 1.6rem;
+        color: #1a1a1a !important;
+        background: none;
+        border: none;
+        position: absolute !important;
+        top: 8px !important;
+        right: 16px !important;
+        margin-left: 0;
+        margin-top: 0;
+        order: 2;
+    }
+
+    #menuToggle:focus {
+        outline: 2px solid #c8a96e;
+    }
+
+    /* === NAV OVERLAY: Dark Elegant === */
+    .nav-links {
+        display: none !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #111111;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        gap: 4px;
+    }
+
+    .nav-links.open {
+        display: flex !important;
+    }
+
+    .nav-links li {
+        margin: 6px 0 !important;
+    }
+
+    .nav-links a {
+        font-size: 1.15rem !important;
+        color: #ffffff !important;
+        letter-spacing: 3px !important;
+        padding: 10px 24px;
+        display: block;
+        text-align: center;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: #c8a96e !important;
+    }
+
+    /* === HOME HERO: Reduced height so content is visible === */
+    .hero {
+        height: 55vh !important;
+        min-height: 320px !important;
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* === IMAGE CARDS & SECTIONS === */
+    .location-image {
+        height: 160px !important;
+        min-height: 160px !important;
+    }
+
+    /* === ABOUT PAGE: Staggered Grid Fix === */
+    .staggered-grid,
+    .staggered-grid:not(.staggered-grid-reverse-2),
+    .staggered-grid-reverse-2 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+        width: 100% !important;
+    }
+
+    .staggered-bg-image {
+        width: 100% !important;
+        height: 220px !important;
+        min-height: 220px !important;
+        position: relative !important;
+        order: 1 !important;
+    }
+
+    .staggered-grid:not(.staggered-grid-reverse-2) .staggered-bg-image,
+    .staggered-grid-reverse-2 .staggered-bg-image {
+        width: 100% !important;
+        order: 1 !important;
+    }
+
+    .content-box,
+    .staggered-grid:not(.staggered-grid-reverse-2) .content-box,
+    .staggered-grid-reverse-2 .content-box {
+        width: 100% !important;
+        order: 2 !important;
+        padding: 24px 20px !important;
+        margin: 0 !important;
+    }
+
+    /* Remove overlap effects on mobile */
+    .overlap-left,
+    .overlap-right {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .staggered-section {
+        padding: 0 !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* About hero */
+    .about-hero {
+        height: 35vh !important;
+        min-height: 180px !important;
+    }
+
+    /* Section title & text */
+    .section-title {
+        font-size: 0.75rem !important;
+        margin-bottom: 12px !important;
+    }
+
+    .content-text p {
+        font-size: 0.88rem !important;
+        line-height: 1.6 !important;
+    }
+
+    .signature {
+        font-size: 1.4rem !important;
+        margin-top: 16px !important;
+    }
+
+    .image-card-large {
+        min-height: 200px !important;
+        height: 200px !important;
+    }
+
+    .cater-slider-box {
+        min-height: 180px !important;
+        height: 180px !important;
+    }
+
+    .gallery-item {
+        height: 160px !important;
+    }
+
+    .gallery-column {
+        gap: 8px !important;
+    }
+
+    .menu-hero,
+    .page-hero,
+    .events-hero-section,
+    .order-hero {
+        height: 50vh !important;
+        min-height: 300px !important;
+        padding-top: 80px !important;
+        padding-bottom: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-direction: column !important;
+        background-position: center center !important;
+        background-size: cover !important;
+    }
+
+    /* === MENU & LOCATIONS PAGE: Cards === */
+    .menu-locations-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+
+    .location-card {
+        width: 100% !important;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .location-card:hover {
+        transform: none !important; /* disable hover lift on touch */
+    }
+
+    .location-image {
+        height: 100px !important;
+        min-height: 100px !important;
+    }
+
+    .image-overlay {
+        padding: 4px 10px !important;
+    }
+
+    .card-brand {
+        font-size: 0.8rem !important;
+    }
+
+    .card-brand-sub {
+        font-size: 0.45rem !important;
+    }
+
+    .location-info {
+        padding: 12px !important;
+    }
+
+    .location-name {
+        font-size: 0.85rem !important;
+        margin-bottom: 6px !important;
+    }
+
+    .info-item {
+        font-size: 0.7rem !important;
+        margin-bottom: 2px !important;
+        align-items: flex-start;
+    }
+
+    .info-icon {
+        margin-right: 8px !important;
+        flex-shrink: 0;
+    }
+
+    .btn-menu-card {
+        font-size: 0.75rem !important;
+        margin-top: 10px !important;
+        padding: 6px 0 !important;
+        display: inline-block;
+    }
+
+    /* Region label */
+    .region-label {
+        font-size: 0.95rem !important;
+        letter-spacing: 3px !important;
+    }
+
+    .region-header-container {
+        margin-bottom: 16px !important;
+    }
+
+    .bg-overlay {
+        background: linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.5) 0%,
+            rgba(0,0,0,0.65) 55%,
+            rgba(0,0,0,0.82) 100%
+        ) !important;
+    }
+
+    .hero-content,
+    .hero .hero-content {
+        padding: 0 24px !important;
+        text-align: center;
+        width: 100%;
+    }
+
+    .welcome-box {
+        margin: 0 auto !important;
+        text-align: center;
+        padding: 0;
+    }
+
+    .welcome-top {
+        font-size: 0.8rem !important;
+        letter-spacing: 5px !important;
+        color: #e0c98a !important;
+        margin-bottom: 12px !important;
+        display: block;
+        text-transform: uppercase;
+    }
+
+    .welcome-title {
+        font-size: 9vw !important;
+        letter-spacing: 2px !important;
+        line-height: 1.05 !important;
+        margin-bottom: 10px !important;
+        color: #ffffff !important;
+    }
+
+    .welcome-sub {
+        font-size: 0.85rem !important;
+        letter-spacing: 7px !important;
+        color: rgba(255,255,255,0.7) !important;
+        margin-bottom: 32px !important;
+    }
+
+    .welcome-box .btn,
+    .hero .btn {
+        padding: 15px 38px !important;
+        font-size: 0.85rem !important;
+        letter-spacing: 2px !important;
+        background: #c8a96e !important;
+        color: #111 !important;
+        border: none !important;
+        text-transform: uppercase;
+        font-weight: 700;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    /* === INNER PAGE HEROES === */
+    .page-hero {
+        height: 40vh !important;
+        min-height: 200px !important;
+        padding-top: 60px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-title-main {
+        font-size: 7.5vw !important;
+        letter-spacing: 3px !important;
+        text-align: center;
+    }
+
+    /* === GRIDS === */
     .menu-locations-grid,
     .cater-event-block,
     .highlights,
-    .form-row {
+    .form-row,
+    .grid-3 {
         grid-template-columns: 1fr !important;
-        gap: 30px;
+        gap: 20px;
     }
 
     .cater-reverse {
@@ -1052,121 +1398,114 @@ footer a {
         flex-direction: column-reverse;
     }
 
-    /* Spacing */
+    /* === SPACING === */
     .py-80,
     .section {
-        padding: 40px 0;
+        padding: 40px 0 !important;
     }
 
-    /* Typography */
-    h1 {
-        font-size: 2.2rem !important;
+    /* === TYPOGRAPHY === */
+    h1 { font-size: 1.6rem !important; }
+    h2 { font-size: 1.3rem !important; }
+    h3 { font-size: 1.1rem !important; }
+    p, li, a { font-size: 0.88rem !important; }
+
+    /* === BUTTONS === */
+    .btn {
+        padding: 12px 28px !important;
+        font-size: 0.85rem !important;
     }
 
-    h2 {
-        font-size: 1.8rem !important;
+    .arrow {
+        width: 34px !important;
+        height: 34px !important;
     }
 
-    .hero-title-main {
-        font-size: 2.5rem !important;
+    .btn-text { gap: 8px !important; }
+
+    /* === CONTACT & FORMS === */
+    .premium-form {
+        padding: 20px !important;
+        border-radius: 12px !important;
     }
 
-    /* Forms */
-    input,
-    select,
-    textarea {
-        font-size: 16px !important;
-        /* Prevent iOS zoom */
-        padding: 12px 0;
+    .form-group label {
+        font-size: 0.7rem !important;
+        margin-bottom: 6px !important;
     }
 
-    /* Event/Catering specific */
-    .cater-info-box {
-        padding: 30px;
+    input, select, textarea {
+        font-size: 16px !important; /* 16px prevents iOS zoom */
+        padding: 10px 12px !important;
+        border-radius: 6px !important;
     }
 
-    .cater-slider-box {
-        min-height: 250px;
+    .submit-btn {
+        width: 100%;
+        padding: 14px !important;
+        font-size: 0.85rem !important;
     }
 
-    .year-label {
-        font-size: 2.5rem;
+    .info-label {
+        font-size: 0.65rem !important;
     }
 
-    /* Ensure specific sections dont overflow */
+    .split-text h2 {
+        font-size: 1.4rem !important;
+        margin-bottom: 12px !important;
+    }
+
+    .description-text {
+        font-size: 0.8rem !important;
+        margin-bottom: 24px !important;
+    }
+
+    .detail-item {
+        margin-bottom: 16px !important;
+    }
+
+    .detail-icon {
+        font-size: 1.2rem !important;
+        margin-right: 12px !important;
+    }
+
+    .detail-text h4 {
+        font-size: 0.85rem !important;
+        margin-bottom: 4px !important;
+    }
+
+    .detail-text p {
+        font-size: 0.8rem !important;
+    }
+
+    .social-link {
+        font-size: 0.75rem !important;
+        padding-bottom: 2px !important;
+    }
+
+
+    /* === MEDIA === */
     .split-media,
-    .image-card-large,
-    .image-card-small {
+    .image-card-large {
         width: 100%;
         position: relative;
         height: auto;
         min-height: 250px;
-        top: auto;
-        left: auto;
-        right: auto;
-        bottom: auto;
+        top: auto; left: auto; right: auto; bottom: auto;
         transform: none !important;
         margin-bottom: 20px;
     }
 
-    .image-card-small {
-        display: none;
-        /* Hide decorative small image on mobile to save space */
-    }
+    .image-card-small { display: none; }
 
-    /* Performance: Disable fixed background on mobile */
-    body {
-        background-attachment: scroll !important;
-    }
-
-    /* SIZE REDUCTION - Compact Mobile View */
-    .logo h1 {
-        font-size: 1.2rem !important;
-    }
-
-    .logo span {
-        font-size: 0.6rem !important;
-    }
-
-    header nav {
-        padding: 10px 0 !important;
-    }
-
-    .page-hero {
-        height: 30vh !important;
-        min-height: 200px;
-    }
-
-    .page-hero h1 {
-        font-size: 1.8rem !important;
-    }
-
-    .section,
-    .py-80 {
-        padding: 30px 0 !important;
-    }
-
-    h1 {
-        font-size: 1.8rem !important;
-    }
-
-    h2 {
-        font-size: 1.5rem !important;
-    }
-
-    p,
-    li,
-    a {
-        font-size: 0.9rem !important;
-    }
-
-    .btn {
-        padding: 6px 16px !important;
-        font-size: 0.75rem !important;
-    }
+    /* === EVENTS / CATERING === */
+    .cater-info-box { padding: 25px; }
+    .cater-slider-box { min-height: 250px; }
+    .year-label { font-size: 2.5rem; }
 }
 
 
 .mt-30 {
     margin-top: 30px;
 }
+
