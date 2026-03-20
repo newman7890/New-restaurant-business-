@@ -694,13 +694,13 @@ body.home-page main {
         font-size: clamp(0.8rem, 4vw, 1.1rem) !important;
         letter-spacing: 4px !important;
         opacity: 0.9;
-        color: #d4af37 !important;
+        color: #f5f5dc !important;
     }
 
     .welcome-top {
         font-size: 0.9rem !important;
         margin-bottom: 10px !important;
-        color: #d4af37 !important;
+        color: #f5f5dc !important;
     }
 
     .welcome-box {
