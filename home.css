@@ -632,21 +632,30 @@ body.home-page main {
     }
 
     /* Feature Restoration - Keep Cinematic Vibe, Fix Mobile Performance */
+    @keyframes scene-cycle-mobile {
+        0% { opacity: 0; transform: translate3d(0,0,0); }
+        5% { opacity: 0.6; }
+        33% { opacity: 0.6; }
+        38% { opacity: 0; }
+        100% { opacity: 0; transform: translate3d(0,0,0); }
+    }
+
     .video-graphic-bg {
         height: 120vh !important;
-        height: 120svh !important; /* Bleed out top/bottom to prevent iOS resize jitter */
+        height: 120svh !important;
         top: -10vh !important;
-        transform: translateZ(0); /* Force GPU Hardware Acceleration */
+        transform: translateZ(0);
         -webkit-transform: translateZ(0);
         will-change: transform;
     }
 
     .bg-scene {
         display: block !important;
-        opacity: 0.4; /* Slightly dimmer for better text focus on mobile */
-        transform: translate3d(0, 0, 0);
-        -webkit-transform: translate3d(0, 0, 0);
-        will-change: transform, opacity;
+        opacity: 0.4;
+        animation: scene-cycle-mobile 18s infinite !important;
+        transform: translate3d(0, 0, 0) !important;
+        -webkit-transform: translate3d(0, 0, 0) !important;
+        will-change: opacity;
     }
 
     .gallery-column {
