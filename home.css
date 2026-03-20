@@ -653,7 +653,9 @@ body.home-page main {
     .bg-scene {
         display: block !important;
         opacity: 0.4;
-        animation: scene-cycle-mobile 18s infinite !important;
+        animation-name: scene-cycle-mobile !important;
+        animation-duration: 18s !important;
+        animation-iteration-count: infinite !important;
         will-change: transform, opacity;
     }
 
