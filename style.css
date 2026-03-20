@@ -178,11 +178,12 @@ header {
     transition: all 0.3s ease;
 }
 
-nav {
+header nav.container {
+    max-width: 100% !important;
+    padding: 15px 40px !important;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
 }
 
 .logo h1 {
@@ -1048,11 +1049,14 @@ footer a {
     }
 
     .logo {
+        position: absolute !important;
+        top: 16px !important;
+        left: 12px !important;
         display: flex !important;
         flex-direction: column !important;
         align-items: flex-start !important;
         text-align: left !important;
-        margin-left: -4px !important;
+        margin: 0 !important;
     }
 
     .logo h1 {

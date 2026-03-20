@@ -72,9 +72,11 @@
     }
 }
 
-/* Restore Desktop Parallax Vibe */
-body {
-    background-attachment: fixed !important;
+/* Restore Desktop Parallax Vibe - STRICTLY FOR DESKTOP */
+@media (min-width: 992px) {
+    body {
+        background-attachment: fixed !important;
+    }
 }
 
 /* Home Page Minimalist overrides */
@@ -629,10 +631,22 @@ body.home-page main {
         padding: 60px 0;
     }
 
-    /* Feature Restoration - Keep Cinematic Vibe */
+    /* Feature Restoration - Keep Cinematic Vibe, Fix Mobile Performance */
+    .video-graphic-bg {
+        height: 120vh !important;
+        height: 120svh !important; /* Bleed out top/bottom to prevent iOS resize jitter */
+        top: -10vh !important;
+        transform: translateZ(0); /* Force GPU Hardware Acceleration */
+        -webkit-transform: translateZ(0);
+        will-change: transform;
+    }
+
     .bg-scene {
         display: block !important;
         opacity: 0.4; /* Slightly dimmer for better text focus on mobile */
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        will-change: transform, opacity;
     }
 
     .gallery-column {
