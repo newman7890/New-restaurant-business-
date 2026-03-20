@@ -196,7 +196,7 @@ header nav.container {
 .logo span {
     font-size: 0.8rem;
     letter-spacing: 4px;
-    color: var(--text-cream);
+    color: var(--accent-gold);
 }
 
 .nav-links {
