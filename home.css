@@ -632,12 +632,13 @@ body.home-page main {
     }
 
     /* Feature Restoration - Keep Cinematic Vibe, Fix Mobile Performance */
+    /* Feature Restoration - Keep Cinematic Vibe, Fix Mobile Performance */
     @keyframes scene-cycle-mobile {
-        0% { opacity: 0; transform: translate3d(0,0,0); }
+        0% { opacity: 0; transform: scale(1) translate3d(0, 0, 0); }
         5% { opacity: 0.6; }
         33% { opacity: 0.6; }
         38% { opacity: 0; }
-        100% { opacity: 0; transform: translate3d(0,0,0); }
+        100% { opacity: 0; transform: scale(1.15) translate3d(-10px, -10px, 0); }
     }
 
     .video-graphic-bg {
@@ -653,9 +654,7 @@ body.home-page main {
         display: block !important;
         opacity: 0.4;
         animation: scene-cycle-mobile 18s infinite !important;
-        transform: translate3d(0, 0, 0) !important;
-        -webkit-transform: translate3d(0, 0, 0) !important;
-        will-change: opacity;
+        will-change: transform, opacity;
     }
 
     .gallery-column {
