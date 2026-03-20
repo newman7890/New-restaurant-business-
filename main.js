@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // ── IntersectionObserver for Scroll Reveal Animations ──
+    let ticking = false;
     // Much more performant than scroll events. Uses a threshold to trigger
     // when 15% of the element is visible.
     const revealSelectors = '.reveal, .reveal-left, .reveal-right, .reveal-scale';
@@ -52,9 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     const rate = scrolled * 0.3;
                     hero.style.backgroundPositionY = `calc(50% + ${rate}px)`;
                 });
+                ticking = false;
             });
+            ticking = true;
         }
-    });
+    }, { passive: true });
 
     // ── Counter Animation for any .count-up elements ──
     const counters = document.querySelectorAll('.count-up');
