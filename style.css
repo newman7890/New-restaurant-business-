@@ -1032,13 +1032,13 @@ footer a {
         width: 100% !important;
     }
 
-    /* === HEADER: Clean White Bar === */
+    /* === HEADER: Dark Gold Theme === */
     header#header,
     .home-page #header {
-        background: #ffffff !important;
+        background: #000000 !important;
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.15) !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.4) !important;
     }
 
     header nav {
@@ -1061,14 +1061,15 @@ footer a {
 
     .logo h1 {
         font-size: 1.25rem !important;
-        color: #1a1a1a !important;
+        color: #c8a96e !important;
         letter-spacing: 2px !important;
     }
 
     .logo span {
         font-size: 0.5rem !important;
-        color: #666 !important;
+        color: #c8a96e !important;
         letter-spacing: 3px !important;
+        opacity: 0.9;
     }
 
     #menuToggle {
@@ -1078,7 +1079,7 @@ footer a {
         cursor: pointer;
         padding: 6px 10px;
         font-size: 1.6rem;
-        color: #1a1a1a !important;
+        color: #c8a96e !important;
         background: none;
         border: none;
         position: absolute !important;
