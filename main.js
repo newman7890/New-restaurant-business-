@@ -21,16 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // ── Smooth Header Shrink on Scroll (DISABLED) ──
-    // The user requested that the header stay exactly where it is (static at top) 
-    // rather than following or animating on scroll.
-    const header = document.getElementById('header');
-    if (header) {
-        header.style.padding = '1.2rem 0';
-        header.style.backgroundColor = 'transparent';
-        header.style.backdropFilter = 'none';
-        header.style.boxShadow = 'none';
-    }
+    // Header animations have been permanently disabled via CSS.
 
     // ── Smooth Page Transitions ──
     // Fade out before navigating to internal pages
