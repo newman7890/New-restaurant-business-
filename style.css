@@ -1041,10 +1041,18 @@ footer a {
     }
 
     header nav {
-        padding: 14px 20px !important;
+        padding: 14px 8px !important;
         display: flex;
         align-items: center;
         justify-content: space-between;
+    }
+
+    .logo {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        margin-left: -4px !important;
     }
 
     .logo h1 {
