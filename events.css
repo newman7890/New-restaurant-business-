@@ -1,6 +1,7 @@
 /* Events Page Specific Styles */
 .events-hero-section {
     height: 70vh;
+    padding-top: 100px;
     background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)), url('events-bg.jpg');
     background-size: cover;
     background-position: center;
